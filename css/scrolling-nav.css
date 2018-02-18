@@ -43,14 +43,14 @@ section {
 
 
 .fade {
-   opacity: 1;
+   opacity: 0.5;
    transition: opacity .25s ease-in-out;
    -moz-transition: opacity .25s ease-in-out;
    -webkit-transition: opacity .25s ease-in-out;
-   }
+  }
 
-   .fade:hover {
-      opacity: 0.5;
-      }
+  .fade:hover {
+    opacity: 1;
+  }
     
       
