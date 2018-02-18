@@ -1,0 +1,56 @@
+/*!
+ * Start Bootstrap - Scrolling Nav (https://startbootstrap.com/template-overviews/scrolling-nav)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
+ */
+
+header {
+  padding: 154px 0 100px;
+}
+
+@media (min-width: 992px) {
+  header {
+    padding: 156px 0 100px;
+  }
+}
+
+section {
+  padding: 150px 0;
+}
+
+@font-face {
+    font-family: "simplifica";
+    src: url("fonts/SIMPLIFICA-Typeface.ttf");
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.moveimage
+{
+    position: relative;
+    top: 25px;
+    left: 15px;
+}
+
+.movetext
+{
+    position: relative;
+    left: 10px;
+    font-size: 30px;
+}
+
+
+.fade {
+   opacity: 1;
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+   }
+
+   .fade:hover {
+      opacity: 0.5;
+      }
+    
+      
