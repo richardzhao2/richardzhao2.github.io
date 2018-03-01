@@ -41,31 +41,54 @@
             <h5 class="w3-center w3-padding-64">
                 <span class="w3-tag w3-wide">DEV BLOG</span>
             </h5>
+
             <div class="w3-panel w3-leftbar w3-light-grey">
                 <p>
-                    <i>2/23 Sockets and Client-Server</i>
+                    <i>3/1 Game Mechanics</i>
                 </p>
             </div>
-            <p>Changed multiplayer architecture to not use the host as a master client and instead have a separate process running
-                the server. I made this change because I thought it'd be easier to resolve user actions if all generation
-                was handled by the server rather than having a client generate everything and have him broadcast all actions.
-                Some of my rationales behind this were:</p>
-            <p>
+            <p> Outlined some of the mechanics that I want to introduce. The most important feature to implement is something
+                similar to Path of Exile's massive passive tree system and its socket and gem system-- namely the ability
+                to modify bullets and projectile effects through the use of some kind of modifier. Took some inspiration
+                of Cataclysm: DDA and decided to implement their HUD and complexity when it comes to player health and what
+                kind of environmental effects the player's character reacts to.
+                <br>
+                I think the modifier that I really want to see is a combination of:
                 <ul>
-                    <li>Easier to resolve input from hosts and clients and update accordingly</li>
-                    <li>Consistent output (everyone sends to server, receives from server)</li>
-                    <li>No perceived host advantage</li>
+                    <li>Knockback on hit</li>
+                    <li>Multiple Projectiles</li>
+                    <li>Chain</li>
                 </ul>
-            </p>
-            <p>This is still subject to change of course; I'm going to have to test out multiplayer capabilities. Since keeping
-                precise and synchronized game states between clients isn't that important, P2P might still be a viable solution.</p>
-            <div class="w3-panel w3-leftbar w3-light-grey">
+
+                I'll try to experiment with stacking modifiers on top of each other in the upcoming weeks.
                 <p>
-                    <i>2/23 First Post</i>
-                </p>
-            </div>
-            <p>Hi, this is my dev blog! I'll be posting any novelty things I've tinkered with and updates on projects that I'm
-                working on here.</p>
+
+                    <div class="w3-panel w3-leftbar w3-light-grey">
+                        <p>
+                            <i>2/23 Sockets and Client-Server</i>
+                        </p>
+                    </div>
+                    <p>Changed multiplayer architecture to not use the host as a master client and instead have a separate process
+                        running the server. I made this change because I thought it'd be easier to resolve user actions if
+                        all generation was handled by the server rather than having a client generate everything and have
+                        him broadcast all actions. Some of my rationales behind this were:</p>
+                    <p>
+                        <ul>
+                            <li>Easier to resolve input from hosts and clients and update accordingly</li>
+                            <li>Consistent output (everyone sends to server, receives from server)</li>
+                            <li>No perceived host advantage</li>
+                        </ul>
+                    </p>
+                    <p>This is still subject to change of course; I'm going to have to test out multiplayer capabilities. Since
+                        keeping precise and synchronized game states between clients isn't that important, P2P might still
+                        be a viable solution.</p>
+                    <div class="w3-panel w3-leftbar w3-light-grey">
+                        <p>
+                            <i>2/23 First Post</i>
+                        </p>
+                    </div>
+                    <p>Hi, this is my dev blog! I'll be posting any novelty things I've tinkered with and updates on projects
+                        that I'm working on here.</p>
         </div>
         <!-- Footer -->
         <footer class="w3-center w3-light-grey w3-padding-48 w3-small">
