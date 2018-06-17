@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Richard Zhao | Learn Python</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link rel="icon" href="../images/favicon.png">
+</head>
+<style>
+body
+{
+h1 {
+  font-family: "Josefin Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+  color: #d7cec7;
+}
+h3 {
+  font-family: "Josefin Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.4px;
+  color: #d7cec7;
+}
+p {
+  font-family: "Josefin Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #d7cec7;
+}
+blockquote {
+  font-family: "Josefin Sans";
+  font-size: 21px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+pre {
+  font-family: "Josefin Sans";
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 18.5714px;
+}
+  font-family: 'Josefin Sans';
+  background-color: #424242;
+}
+</style>
+</head>
+
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-card-2" style="font-family: 'Josefin Sans', sans-serif; width:160px;">
+  <a href="../index.html" class="w3-bar-item w3-button">Home</a>
+  <a href="pythonIntro.html" class="w3-bar-item w3-button">Introduction</a>
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('acc1')">
+  Basic Syntax and<br> Operators <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="acc1" class="w3-hide w3-white w3-card-2">
+    <a href="#" class="w3-bar-item w3-button">Basic Syntax</a>
+    <a href="#" class="w3-bar-item w3-button">Operators</a>
+    <a href="#" class="w3-bar-item w3-button">Problems</a>
+    <a href="#" class="w3-bar-item w3-button">Solutions</a>
+  </div>
+
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('acc2')">
+  Functions <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="acc2" class="w3-hide w3-white w3-card-2">
+    <a href="#" class="w3-bar-item w3-button">Writing and Using Functions</a>
+    <a href="#" class="w3-bar-item w3-button">Problems</a>
+    <a href="#" class="w3-bar-item w3-button">Solutions</a>
+  </div>
+
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('acc3')">
+  Conditionals <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="acc3" class="w3-hide w3-white w3-card-2">
+    <a href="#" class="w3-bar-item w3-button">Using Conditionals</a>
+    <a href="#" class="w3-bar-item w3-button">Problems</a>
+    <a href="#" class="w3-bar-item w3-button">Solutions</a>
+  </div>
+
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('acc4')">
+  Loops <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="acc4" class="w3-hide w3-white w3-card-2">
+    <a href="#" class="w3-bar-item w3-button">Loops</a>
+    <a href="#" class="w3-bar-item w3-button">Problems</a>
+    <a href="#" class="w3-bar-item w3-button">Solutions</a>
+  </div>
+
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('acc5')">
+  Strings <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="acc5" class="w3-hide w3-white w3-card-2">
+    <a href="#" class="w3-bar-item w3-button">Creating Strings</a>
+    <a href="#" class="w3-bar-item w3-button">Looping Over Strings</a>
+    <a href="#" class="w3-bar-item w3-button">Manipulating Strings</a>
+    <a href="#" class="w3-bar-item w3-button">Problems</a>
+    <a href="#" class="w3-bar-item w3-button">Solutions</a>
+  </div>
+
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('acc6')">
+  Lists <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="acc6" class="w3-hide w3-white w3-card-2">
+    <a href="#" class="w3-bar-item w3-button">Creating Lists and List Properties</a>
+    <a href="#" class="w3-bar-item w3-button">Useful Functions on Lists</a>
+    <a href="#" class="w3-bar-item w3-button">Multi-dimensional Lists</a>
+    <a href="#" class="w3-bar-item w3-button">List Aliasing</a>
+    <a href="#" class="w3-bar-item w3-button">Problems</a>
+    <a href="#" class="w3-bar-item w3-button">Solutions</a>
+  </div>
+
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('acc7')">
+  Classes <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="acc7" class="w3-hide w3-white w3-card-2">
+    <a href="#" class="w3-bar-item w3-button">Introduction</a>
+    <a href="#" class="w3-bar-item w3-button">Creating Classes</a>
+    <a href="#" class="w3-bar-item w3-button">Constructor</a>
+    <a href="#" class="w3-bar-item w3-button">Inheritance</a>
+    <a href="#" class="w3-bar-item w3-button">Static Methods</a>
+    <a href="#" class="w3-bar-item w3-button">Problems</a>
+    <a href="#" class="w3-bar-item w3-button">Solutions</a>
+  </div>
+
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('acc8')">
+  Recursion <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="acc8" class="w3-hide w3-white w3-card-2">
+    <a href="#" class="w3-bar-item w3-button">Introduction</a>
+    <a href="#" class="w3-bar-item w3-button">Basic Examples</a>
+    <a href="#" class="w3-bar-item w3-button">Backtracking</a>
+    <a href="#" class="w3-bar-item w3-button">Problems</a>
+    <a href="#" class="w3-bar-item w3-button">Solutions</a>
+  </div>
+
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('acc9')">
+  Efficiency <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="acc9" class="w3-hide w3-white w3-card-2">
+    <a href="#" class="w3-bar-item w3-button">A short blurb</a>
+    <a href="#" class="w3-bar-item w3-button">Examples</a>
+    <a href="#" class="w3-bar-item w3-button">Problems</a>
+    <a href="#" class="w3-bar-item w3-button">Solutions</a>
+  </div>
+
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('acc10')">
+  Pygame <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="acc10" class="w3-hide w3-white w3-card-2">
+    <a href="#" class="w3-bar-item w3-button">Introduction(why pygame)</a>
+    <a href="#" class="w3-bar-item w3-button">Rects and Collision</a>
+    <a href="#" class="w3-bar-item w3-button">Sprites</a>
+    <a href="#" class="w3-bar-item w3-button">Handling Events</a>
+    <a href="#" class="w3-bar-item w3-button">Animation</a>
+  </div>
+
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('acc11')">
+  Extra <i class="fa fa-caret-down"></i>
+  </button>
+  <div id="acc11" class="w3-hide w3-white w3-card-2">
+    <a href="#" class="w3-bar-item w3-button">P vs. NP</a>
+    <a href="#" class="w3-bar-item w3-button">Tkinter(and why it sucks)</a>
+    <a href="#" class="w3-bar-item w3-button">Parallel Processing</a>
+    <a href="#" class="w3-bar-item w3-button">What kind of coding hardware do I need???</a>
+  </div>
+  </div>
+
+
+
+</div>
+
+
+<div class="w3-container" style="margin-left:160px">
+<h2 style="color:#d7cec7">Computer Science with Python</h2>
+<p style="color:#d7cec7">Hi, my name's Richard and this is a very simple introduction to computer science using Python.</p>
+<p style="color:#d7cec7">One of the main issues I have with a lot of online resources is that they're usually glorified syntax references. Rarely do I find sources that develop problem-solving skills, and the ones that do often focus very heavily on that alone, so I made this site in hopes that it'll help bridge the gap between knowing a bunch of syntax and knowing how to use that knowledge to solve problems.</p>
+<p style="color:#d7cec7">Another thing I hate about a lot of online resources is that they always only use videos(which are nice in their own way) but sometimes I want to power through documentation and learn quickly instead of listening to poorly written jokes for an extra 3 minutes. Other times I like to watch a video when I need to go slower. Sometimes I like to do practice problems to brush up on skills, and other times I just want a refresher and want to look at a bunch of examples of implementation, so ideally I'd like to have all 3 (videos coming soon!)</p>
+<p style="color:#d7cec7">I added a solutions section to give a sample solution of the problems. There are multiple ways to solve each problem and there's definitely better coded ones than the ones I provide. A lot of websites don't like giving you solutions in hopes that it "forces" you to learn, or they don't explain what their code actually does (either no explanation or comments) but what usually ends up happening is I get mad and just leave the site. </p>
+<p style="color:#d7cec7">I like starting off with Python because it's an easy language to pickup, but language choice doesn't really matter in the end.</p>
+<p style="color:#d7cec7">You'll note that I don't actually run a Python compiler within the web browser- this is for several reasons. Some of them are actual reasons, and some of them...are questionable. Originally, I wanted to write this as a supplementary source for learning for college students taking their first CS course, and from my experience they usually force you to write code outside of the browser. Another (admittedly bad) reason is that I'm quite too lazy to actually implement such a feature. (Python isn't Javascript!) </p>
+<p style="color:#d7cec7">Ideally, you'd learn more about problem solving skills so you can switch to any language you want, but hopefully, you'll end up learning these topics:</p>
+<u1 style="color:#d7cec7">
+  <li>Basic Syntax and Using Operators</li>
+  <li>Functions</li>
+  <li>Conditionals</li>
+  <li>Loops</li>
+  <li>Strings</li>
+  <li>Lists</li>
+  <li>Classes + Object Oriented Programming</li>
+  <li>Recursion</li>
+  <li>Thinking Efficiently</li>
+  <li>Basic Pygame</li>
+</u1>
+
+<p style="color:#d7cec7">There's probably more side blurbs that I find interesting that I think are worth showing, but they don't really add much to your ability as a programmer or go beyond the scope of a really basic introduction to computer science. They'll be in the extras section. </p>
+
+<h1 style="color:#d7cec7"> THIS IS NOT MEANT TO BE A END ALL BE ALL COMPREHENSIVE GUIDE TO EVERYTHING COMPUTER SCIENCEY. IT IS MEANT AS A SUPPLEMENT TO EITHER READING PYTHON'S DOCUMENTATION OR TO AN INTRODUCTORY COMPUTER SCIENCE COURSE- IT WOULD BECOME FAR TOO DENSE AND CUMBERSOME IF IT COVERED EVERYTHING IN-DEPTH. THE GOAL IS TO GET YOU TO BECOME MORE FAMILIAR WITH TOOLS TO PROGRAM IN PYTHON WITH AND TO BECOME COMFORTABLE WITH USING SAID TOOLS TO SOLVE PROBLEMS!!!</h1>
+</div>
+
+<script>
+function myAccFunc(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-green";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace(" w3-green", "");
+    }
+}
+
+function myDropFunc() {
+    var x = document.getElementById("demoDrop");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-green";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace(" w3-grey", "");
+        //to change back w3-green
+    }
+}
+</script>
+
+</body>
+</html>
