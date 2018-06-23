@@ -1,0 +1,130 @@
+/*!
+ * Start Bootstrap - Scrolling Nav (https://startbootstrap.com/template-overviews/scrolling-nav)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
+ */
+
+header {
+  padding: 154px 0 100px;
+}
+
+@media (min-width: 992px) {
+  header {
+    padding: 156px 0 100px;
+  }
+}
+
+section {
+  padding: 150px 0;
+}
+
+@font-face {
+    font-family: "simplifica";
+    src: url("fonts/SIMPLIFICA-Typeface.ttf");
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.moveimage
+{
+    position: relative;
+    top: 25px;
+    left: 15px;
+}
+
+.movetext
+{
+    position: relative;
+    left: 10px;
+    font-size: 30px;
+}
+
+
+.fadein {
+   opacity: 0.5;
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+  }
+
+  .fadein:hover {
+    opacity: 1;
+  }
+   
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.een {
+  position: relative;
+  display: inline-block;
+}
+
+.een:hover img {
+  opacity: 0.20;
+}
+
+.een p {
+  position: absolute;
+  top: 35%;
+  width: 80%;
+  margin: 0 10%;
+  text-align: center;
+  z-index: 10;
+}
+
+img {
+  position: relative;
+  z-index: 100;
+  transition: opacity linear 0.25s;
+}
+
+
+.wrapper{
+   position: relative;
+   float: left;
+   left: 20%;
+   width: 73.00%;
+}
+.left1{
+   position: relative;
+   float: left;
+   left: 0.50%;
+   width: 33.00%;
+}
+.left2{
+   position: relative;
+   float: left;
+   left: 1.50%;
+   width: 33.00%;
+}
+.right{
+   position: relative;
+   float: right;
+   right: 0.50%;
+   width: 33.00%;
+}
+
+.center {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.centertext {
+   position: relative;
+   float: center;
+   left: 0.50%;
+   width: 33.00%;
+}
+
+.caption {
+    display: inline-block;
+}
