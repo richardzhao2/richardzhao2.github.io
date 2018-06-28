@@ -5,66 +5,62 @@ window.onload = function run() {
   // all of your code goes in here
   // it runs after the DOM is built
 
-  var test = document.getElementById("test");
-  var testLabel = document.getElementById("label1");
-  // this handler will be executed every time the cursor is moved over a different list item
-  test.addEventListener("mouseover", function (event) {
-    // highlight the mouseover target
-    event.target.style.color = "orange";
-  }, false);
+  var engee = document.getElementById("engee");
+  var engeeOffsetLeft = $('#engee').offset().left;
+  var engeeOffsetTop = $('#engee').offset().top;
+  var engeeLabel = document.getElementById("label1");
 
-
-  test.addEventListener("mousemove", function (event) {
+  engee.addEventListener("mousemove", function (event) {
 
 
     var sizingRatio = 1; //initialize
     var barSizingRatio = 1;
-
-    var squareSize = 187.5; //size of a side
     
-    var centerX = 851; //unique to each square
-    var centerY = 712; //unique to each square
-    var x = event.pageX;
-    var y = event.pageY;
-    console.log(x);
+    var width = $('#engee').width();
+    var height = width;
 
-    var maxDistance = Math.sqrt(2) * squareSize;
-    var xdist = x - centerX;
-    var ydist = y - centerY;
+   
+    var mouseX = event.pageX -  engeeOffsetLeft;//
+    var mouseY = event.pageY - engeeOffsetTop;
+    
+
+    var centerX = width/2 - 1.5; //like 562.75
+    var centerY = height/2 - 1.5;
+
+    var xdist = Math.abs(mouseX - centerX);
+    var ydist = Math.abs(mouseY - centerY);
     var currentDistance = Math.sqrt(xdist * xdist + ydist * ydist);
-
+    
     /*
         Remember that the -1/200 reflected the max distance between when the mouse enters and the CENTER of the square in question
     */
-    if (currentDistance > 93.75) {
-      currentDistance = 93.75;
+    if (currentDistance > 93) {
+      currentDistance = 93;
     }
-    sizingRatio = Math.round((-16 / 1875 * currentDistance + 9 / 5) * 100) / 100;
-    barSizingRatio = Math.round((-58 / 187 * currentDistance + 30) * 100) / 100;
+    
+    
+    sizingRatio = (-1/ 93  * currentDistance + 2);
+    barSizingRatio = (-14/93 * currentDistance + 15);
+    
+   
+    engee.style.transform = "scale(" + sizingRatio + ")";
+    engee.style.zIndex = "1";
 
-    test.style.transformOrigin = "50% 50%";
-    test.style.transform = "scale(" + sizingRatio + ")";
+    engeeLabel.style.transform = "scale(" + barSizingRatio + ")";
+    engeeLabel.style.zIndex = "2";
 
 
-    test.style.zIndex = "1";
-
-
-
-    testLabel.style.transformOrigin = "left";
-    testLabel.style.transform = "scale(" + barSizingRatio + ")";
-    testLabel.style.zIndex = "0";
-
+    
   }, false);
 
-  test.addEventListener("mouseout", function (event) {
+  engee.addEventListener("mouseout", function (event) {
     // highlight the mouseover target
-    test.style.transformOrigin = "50% 50%";
-    test.style.transform = "scale(1)";
-    event.target.style.color = "red";
-    test.style.zIndex = "0";
+    engee.style.transformOrigin = "50% 50%";
+    engee.style.transform = "scale(1)";
+    engee.style.zIndex = "0";
   }, false);
 
-  test.onclick = function () {
+  engee.onclick = function () {
     //location.href = "www.yoursite.com";
     window.open("google.com");
   };
@@ -72,131 +68,187 @@ window.onload = function run() {
 
 
 
+  var schedulize = document.getElementById("schedulize");
+  var schedulizeOffsetLeft = $('#schedulize').offset().left;
+  var schedulizeOffsetTop = $('#schedulize').offset().top;
+  var schedulizeLabel = document.getElementById("label2");
+
+  schedulize.addEventListener("mousemove", function (event) {
 
 
-
-
-
-  ////////////////
-
-  var test2 = document.getElementById("test2");
-  // this handler will be executed every time the cursor is moved over a different list item
-  test2.addEventListener("mouseover", function (event) {
-    // highlight the mouseover target
-    event.target.style.color = "orange";
-  }, false);
-
-
-  test2.addEventListener("mousemove", function (event) {
     var sizingRatio = 1; //initialize
-    var squareSize = 187.5; //size of a side
+    var barSizingRatio = 1;
+    
+    var width = $('#schedulize').width();
+    var height = width;
 
-    var centerX = 851 + 187.5; //unique to each square
-    var centerY = 712; //unique to each square
-    var x = event.pageX;
-    var y = event.pageY;
+   
+    var mouseX = event.pageX -  schedulizeOffsetLeft;//
+    var mouseY = event.pageY - schedulizeOffsetTop;
+    
 
-    var maxDistance = Math.sqrt(2) * squareSize;
-    var xdist = x - centerX;
-    var ydist = y - centerY;
+    var centerX = width/2 - 1.5; //like 562.75
+    var centerY = height/2 - 1.5;
+
+    var xdist = Math.abs(mouseX - centerX);
+    var ydist = Math.abs(mouseY - centerY);
     var currentDistance = Math.sqrt(xdist * xdist + ydist * ydist);
-
+    
     /*
         Remember that the -1/200 reflected the max distance between when the mouse enters and the CENTER of the square in question
     */
-    if (currentDistance > 93.25) {
-      currentDistance = 93.25;
+    if (currentDistance > 93) {
+      currentDistance = 93;
     }
-    sizingRatio = Math.round((-1 / 125 * currentDistance + 9 / 5) * 100) / 100;
+    
+    
+    sizingRatio = (-1/ 93  * currentDistance + 2);
+    barSizingRatio = (-14/93 * currentDistance + 15);
+    
+   
+    schedulize.style.transform = "scale(" + sizingRatio + ")";
+    schedulize.style.zIndex = "1";
 
-    test2.style.transformOrigin = "50% 50%";
-    test2.style.transform = "scale(" + sizingRatio + ")";
+    schedulizeLabel.style.transform = "scale(" + barSizingRatio + ")";
+    schedulizeLabel.style.zIndex = "0";
 
-    /*
-    resizes but nto about center
-    $('#test').width("+=1");
-    $('#test').height("+=1");
-    */
 
-    test2.style.zIndex = "1";
-
+    
   }, false);
 
-  test2.addEventListener("mouseout", function (event) {
+  schedulize.addEventListener("mouseout", function (event) {
     // highlight the mouseover target
-    test2.style.transformOrigin = "50% 50%";
-    test2.style.transform = "scale(1)";
-    event.target.style.color = "red";
-    test2.style.zIndex = "0";
+    schedulize.style.transformOrigin = "50% 50%";
+    schedulize.style.transform = "scale(1)";
+    schedulize.style.zIndex = "0";
   }, false);
 
-  test2.onclick = function () {
+  schedulize.onclick = function () {
     //location.href = "www.yoursite.com";
     window.open("google.com");
   };
-
-
-
-
-
-
-
 
 
   ///////////////////
 
-  var test3 = document.getElementById("test3");
+  var epm = document.getElementById("epm");
+  var epmOffsetLeft = $('#epm').offset().left;
+  var epmOffsetTop = $('#epm').offset().top;
+  var epmLabel = document.getElementById("label3");
   // this handler will be executed every time the cursor is moved over a different list item
-  test3.addEventListener("mouseover", function (event) {
-    // highlight the mouseover target
-    event.target.style.color = "orange";
-  }, false);
+
+  epm.addEventListener("mousemove", function (event) {
 
 
-  test3.addEventListener("mousemove", function (event) {
     var sizingRatio = 1; //initialize
-    var squareSize = 187.5; //size of a side
+    var barSizingRatio = 1;
+    
+    var width = $('#epm').width();
+    var height = width;
 
-    var centerX = 476 + 187.5 + 187.5; //unique to each square
-    var centerY = 686; //unique to each square
-    var x = event.pageX;
-    var y = event.pageY;
+   
+    var mouseX = event.pageX -  epmOffsetLeft;//
+    var mouseY = event.pageY - epmOffsetTop;
+    
 
-    var maxDistance = Math.sqrt(2) * squareSize;
-    var xdist = x - centerX;
-    var ydist = y - centerY;
+    var centerX = width/2 - 1.5; //like 562.75
+    var centerY = height/2 - 1.5;
+
+    var xdist = Math.abs(mouseX - centerX);
+    var ydist = Math.abs(mouseY - centerY);
     var currentDistance = Math.sqrt(xdist * xdist + ydist * ydist);
-
+    
     /*
         Remember that the -1/200 reflected the max distance between when the mouse enters and the CENTER of the square in question
     */
-    if (currentDistance > 93.75) {
-      currentDistance = 93.75;
+    if (currentDistance > 93) {
+      currentDistance = 93;
     }
-    sizingRatio = Math.round((-1 / 125 * currentDistance + 9 / 5) * 100) / 100;
+    
+    
+    sizingRatio = (-1/ 93  * currentDistance + 2);
+    barSizingRatio = (-14/93 * currentDistance + 15);
+    
+   
+    epm.style.transform = "scale(" + sizingRatio + ")";
+    epm.style.zIndex = "1";
 
-    test3.style.transformOrigin = "50% 50%";
-    test3.style.transform = "scale(" + sizingRatio + ")";
+    epmLabel.style.transform = "scale(" + barSizingRatio + ")";
+    epmLabel.style.zIndex = "0";
 
-    /*
-    resizes but nto about center
-    $('#test').width("+=1");
-    $('#test').height("+=1");
-    */
 
-    test3.style.zIndex = "1";
-
+    
   }, false);
 
-  test3.addEventListener("mouseout", function (event) {
+  epm.addEventListener("mouseout", function (event) {
     // highlight the mouseover target
-    test3.style.transformOrigin = "50% 50%";
-    test3.style.transform = "scale(1)";
-    event.target.style.color = "red";
-    test3.style.zIndex = "0";
+    epm.style.transformOrigin = "50% 50%";
+    epm.style.transform = "scale(1)";
+    epm.style.zIndex = "0";
   }, false);
 
-  test3.onclick = function () {
+  epm.onclick = function () {
+    //location.href = "www.yoursite.com";
+    window.open("google.com");
+  };
+
+
+  var blood = document.getElementById("blood");
+  var bloodOffsetLeft = $('#blood').offset().left;
+  var bloodOffsetTop = $('#blood').offset().top;
+  var bloodLabel = document.getElementById("label4");
+  
+  blood.addEventListener("mousemove", function (event) {
+
+
+    var sizingRatio = 1; //initialize
+    var barSizingRatio = 1;
+    
+    var width = $('#blood').width();
+    var height = width;
+
+   
+    var mouseX = event.pageX -  bloodOffsetLeft;//
+    var mouseY = event.pageY - bloodOffsetTop;
+    
+
+    var centerX = width/2 - 1.5; //like 562.75
+    var centerY = height/2 - 1.5;
+
+    var xdist = Math.abs(mouseX - centerX);
+    var ydist = Math.abs(mouseY - centerY);
+    var currentDistance = Math.sqrt(xdist * xdist + ydist * ydist);
+    
+    /*
+        Remember that the -1/200 reflected the max distance between when the mouse enters and the CENTER of the square in question
+    */
+    if (currentDistance > 93) {
+      currentDistance = 93;
+    }
+    
+    
+    sizingRatio = (-1/ 93  * currentDistance + 2);
+    barSizingRatio = (-14/93 * currentDistance + 15);
+    
+   
+    blood.style.transform = "scale(" + sizingRatio + ")";
+    blood.style.zIndex = "1";
+
+    bloodLabel.style.transform = "scale(" + barSizingRatio + ")";
+    bloodLabel.style.zIndex = "0";
+
+
+    
+  }, false);
+
+  blood.addEventListener("mouseout", function (event) {
+    // highlight the mouseover target
+    blood.style.transformOrigin = "50% 50%";
+    blood.style.transform = "scale(1)";
+    blood.style.zIndex = "0";
+  }, false);
+
+  blood.onclick = function () {
     //location.href = "www.yoursite.com";
     window.open("google.com");
   };
