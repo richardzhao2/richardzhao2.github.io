@@ -61,8 +61,7 @@ window.onload = function run() {
   }, false);
 
   engee.onclick = function () {
-    //location.href = "www.yoursite.com";
-    window.open("google.com");
+    location.href = "https://github.com/richardzhao2/engee";
   };
 
 
@@ -124,8 +123,7 @@ window.onload = function run() {
   }, false);
 
   schedulize.onclick = function () {
-    //location.href = "www.yoursite.com";
-    window.open("google.com");
+    location.href = "https://github.com/richardzhao2/Schedulize";
   };
 
 
@@ -188,8 +186,8 @@ window.onload = function run() {
   }, false);
 
   epm.onclick = function () {
-    //location.href = "www.yoursite.com";
-    window.open("google.com");
+    location.href = "https://github.com/richardzhao2/EPM-Dashboard";
+  
   };
 
 
@@ -249,7 +247,7 @@ window.onload = function run() {
   }, false);
 
   blood.onclick = function () {
-    //location.href = "www.yoursite.com";
-    window.open("google.com");
+    location.href = "https://github.com/richardzhao2/Blood-Money";
+    
   };
 }
