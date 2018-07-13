@@ -250,4 +250,27 @@ window.onload = function run() {
     location.href = "https://github.com/richardzhao2/Blood-Money";
     
   };
+
+  
+  var button = document.getElementById("archiveButton");
+  var boring = document.getElementById("archive");
+  var cool = document.getElementById("cool");
+  boring.style.display = "none";
+  var isBoring = false;
+
+  button.addEventListener("click",function(){
+    isBoring = !isBoring;
+    
+    if(isBoring == true){
+      //change to boring
+      boring.style.display = "inline-block";
+      cool.style.display = "none";
+    }
+    else{
+      boring.style.display = "none";
+      cool.style.display = "inline-block";
+    }
+  },false);
+
+
 }
