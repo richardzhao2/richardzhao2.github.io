@@ -262,14 +262,13 @@ window.onload = function run() {
     isBoring = !isBoring;
     
     if(isBoring == true){
-      button.innerHTML = "back";
-      boring.style.display = "block";
+      //change to boring
+      boring.style.display = "inline-block";
       cool.style.display = "none";
     }
     else{
       boring.style.display = "none";
-      cool.style.display = "block";
-      button.innerHTML = "archive";
+      cool.style.display = "inline-block";
     }
   },false);
 
