@@ -267,8 +267,9 @@ window.onload = function run() {
       cool.style.display = "none";
     }
     else{
-      boring.style.display = "none";
       cool.style.display = "block";
+      button.innerHTML = "archive";
+      boring.style.display = "none";
     }
   },false);
 
