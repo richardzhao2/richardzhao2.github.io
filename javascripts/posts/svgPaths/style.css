@@ -1,0 +1,124 @@
+.editable, .arc.editable{
+  stroke-width: 3px;
+  stroke: black;
+  pointer-events: none;
+  fill-opacity: .1;
+  stroke-dasharray: 0 0;
+}
+
+
+
+.draggable{
+  fill-opacity: 1;
+  stroke-width: 1px;
+  cursor: pointer;
+}
+circle.selected{
+  stroke-width: 8px;
+}
+circle.ctrl{
+  fill-opacity: 0;
+  stroke-width: 1px;
+}
+circle.ctrl.selected{
+  stroke-width: 4px;
+}
+
+
+.ctrl-connect{
+  stroke-dasharray: 5 5;
+  stroke-width: 1px;
+}
+
+svg{
+  border: solid 1px lightgrey;
+}
+
+.pathstr{
+  font-family: monospace;
+}
+
+.pathstr span{
+  display: inline-block;
+}
+
+span.cord{
+  font-weight: bold;
+}
+.cord.selected, .ctrl.selected{
+ text-decoration: underline;
+}
+
+
+
+span.flag{
+  font-weight: bold;
+}
+span.flag.selected{
+  color: rgb(0, 245, 255);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.arc{
+  stroke: black;
+  fill-opacity: .0;
+  stroke-dasharray: 5 8 3 8;
+}
+.arc.selected{
+  stroke: rgb(0, 245, 255);
+}
+
+path.center.selected{
+  stroke-width: 3px;
+}
+
+circle.center{
+  fill: none;
+  stroke: black;
+}
+
+
+.angle-background{
+  fill: none;
+  stroke-width: 1px;
+}
+circle.angle-background.selected{
+  stroke-width: 1px;
+}
+.angle-picker{
+  fill-opacity: .5;
+  cursor: pointer;
+}
+circle.angle-picker.selected{
+  stroke-width: 3px;
+  fill-opacity: 1;
+}
+
+
+#moveto > svg, #bez > svg, #arc > svg{
+  background-color: white
+}
+
+rect{
+  fill-opacity: 0;
+}
+
+h3{
+  margin-top: 1em;
+}
+i{
+  font-style: italic;
+  margin-bottom: 1.5em;
+}
+
+.pathstr span{
+  width: 80px;
+  display: inline-block;
+  text-align: center;
+}
+
+#moveto .pathstr{
+  margin-right: 80px;
+}

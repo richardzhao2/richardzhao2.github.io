@@ -1,0 +1,34 @@
+
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+path.player{
+	stroke: steelblue;
+	stroke-width: 4px;
+	fill: none;
+}
+
+circle{
+	stroke-width: 2px;
+	stroke: steelblue;
+}
+
+.name{
+	text-shadow: 0 2px 0 #F5F5F5, 2px 0 0 #F5F5F5, 0 -2px 0 #F5F5F5, -2px 0 0 #F5F5F5;
+}
+
+
+svg{
+	overflow: visible;
+	font-size: 10px;
+	margin-left: -67px;
+	/*background-color: white;*/
+}
+
+img{
+	width: 750px;
+}

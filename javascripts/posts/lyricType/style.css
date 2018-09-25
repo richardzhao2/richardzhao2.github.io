@@ -1,0 +1,78 @@
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+
+.name{
+	text-shadow: 0 2px 0 #F5F5F5, 2px 0 0 #F5F5F5, 0 -2px 0 #F5F5F5, -2px 0 0 #F5F5F5;
+}
+
+
+svg{
+	overflow: visible;
+	font-size: 10px;
+}
+
+
+#buttons{
+	margin-bottom: -3px;
+}
+img.button{
+	width: 140px;
+	cursor: pointer;
+	border: 5px solid rgba(0,0,0,0);
+}
+
+img.button.selected{
+	border-color: black;
+	border-bottom-width: 10px;
+	top: 5px;
+	position: relative;
+}
+
+#player{
+	position: relative;
+	min-height: 800px;
+}
+
+#lineContainer{
+	z-index: 100;
+	position: relative;
+	pointer-events: none;
+	padding-left: 10px;
+}
+
+.line{
+	height: 0px;
+	font-size: 40px;
+	font-family: monospace;
+	font-weight: bold;
+	line-height: 1.3em;
+	opacity: 0;
+}
+
+.frontline{
+	height: 0px;
+	color: #d2130a;
+	text-shadow: 0 1px 0 #333, 1px 0 0 #333, 0 -1px 0 #333, -1px 0 0 #333;
+}
+
+.backline{
+	height: 0px;
+	color: #3b4274;
+	text-shadow: 0 1px 0 #ccc, 1px 0 0 #ccc, 0 -1px 0 #ccc, -1px 0 0 #ccc;
+}
+
+
+#ytContainer{
+	z-index: 0;
+	position: relative;
+}
+
+#graphContainer{
+	display: none;
+}
+

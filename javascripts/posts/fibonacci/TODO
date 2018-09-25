@@ -1,0 +1,73 @@
+Base
+	Visual of 
+
+recurison
+	space horizontally
+
+	try different arc
+
+	change curve for left
+
+	change stroke animation
+
+	add anmiation to circle to be clicked
+
+	change colors to class
+	pick better ones
+	change color change to css animation
+	change heart beat to css animation (in sync?)
+
+
+
+memerizoation
+
+	make sure colors stay correct
+
+	update circle state
+
+	add css transition between circle states
+
+
+newton
+
+	square root line
+	dotter mouseover
+	dotted line mouse
+	animate drawing, zoom in, repeat
+	x y animate
+	how to keep line position correc
+
+	floating point precision
+
+	tangent line animates, calc goes up, circle slides along, zoom
+
+	mouse over
+	tangent start end?
+
+	add table
+
+	interpolate zoom to match other  figures
+
+faster newtons?
+
+
+
+write up
+	recursion
+		formula
+		what it is used for
+		wasteful! number of nodes actually fib number
+		(check starting to make sure; maybe start with F0 to make it nicer)
+
+
+
+	newton
+		fractuals
+
+		5^(1/2) = x
+
+		5 		= x*x-
+
+		0 = x*x - 5
+
+		y = x*x - 5

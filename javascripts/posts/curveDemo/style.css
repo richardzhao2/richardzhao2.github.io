@@ -1,0 +1,22 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+}
+
+path{
+	fill: none;
+	stroke-width: 1px;
+	stroke: black;
+	stroke-opacity: .7;
+}
+
+circle{
+	fill: white;
+	stroke: black;
+}
+
+text{
+	fill: green;
+	cursor: default;
+	font-weight: 700;
+}
