@@ -70,7 +70,7 @@
 	<section id='scroll'>
 		<!--  step/text container  -->
 		<div class='scroll__text'>
-			<div class='step' data-step='1' style='height: 230px;'>
+			<div class='step' data-step='1' style='height: 240px;'>
 				<p>The jist of this problem is basically given some target number, find the pair of numbers that sum up to our
 					target. 
 				</p>
@@ -93,7 +93,7 @@
 					Thus, our solution for this would be <b>[3,4]</b> (representing the indicies of our solutions).
 				</p>
 			</div>
-			<div class='step' data-step='3' style = 'height: 400px;'>
+			<div class='step' data-step='3' style = 'height: 430px;'>
 				<p>The naive solution should be quite easy to understand: simply try out every possible pair of numbers until
 					we get our target.
 				</p>
@@ -117,7 +117,7 @@
 					In our example, 12 and 7 is the winning combination and are thus complements of one another other.
 				</p>
 			</div>
-			<div class = 'step' data-step = '5' style = 'height: 250px;'>
+			<div class = 'step' data-step = '5' style = 'height: 300px;'>
 				<p>
 					<b>We can use the idea of checking only for complements to speed up our solution.</b>
 					<br>
@@ -128,7 +128,7 @@
 					<br>
 				</p>
 			</div>
-			<div class = 'step' data-step = '6' style = 'height: 350px;'>
+			<div class = 'step' data-step = '6' style = 'height: 380px;'>
 				<p>
 					Going back to our example, when we consider the element '3', we only have to see if its complement (16) exists in the array. It doesn't,
 					so it obviously can't be part of the solution. However, once we reach the element '7,' we check to see if its complement (12) exists. It does,
@@ -155,7 +155,7 @@
 				<p>Now we go to 3 -- again, 3's complement (16) is not in our hashtable. we have now seen 3 and record that, so we insert it into our hash table</p>
 			</div>
 			<div class='step' data-step='10'>
-				<p>Now we go to 5 -- it's complement is 14 and isn't in the hashtable. we record it</p>
+				<p>Now we go to 5 -- it's complement is 14 and isn't in the hashtable. We record it</p>
 			</div>
 			<div class='step' data-step='11'>
 				<p>We go to 12 -- 12's complement is 7 and 7 isn't in our hashtable. we don't have a solution yet, so we record it in our hashtable and keep going</p>
