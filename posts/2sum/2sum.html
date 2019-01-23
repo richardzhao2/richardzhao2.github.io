@@ -49,37 +49,43 @@
 		<br>
 		Because nums[0] + nums[1] = 2 + 7 = 9,
 		<br>
+		<br>
 		return [0, 1].</h5>
 	<br>
 	<p style='font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;'>
-		I think a lot of people start off with doing 2-Sum when they discover Leetcode and other similar websites. I don't
-		think
+		I think 2-sum is a pretty common starting point when people learn about the existence of Leetcode and similar websites. Personally, I don't think
 		questions like these are good indicators of how good a programmer someone is, but for whatever reason, every company
 		likes to ask
-		this style of question in interviews.
+		these styles of questions in interviews. 
 	</p>
 	<br>
 	<p style='font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;'>
-		With that being said, I do like this question. It's one of the best and simple examples where there's a very obvious
-		brute force answer in O(n^2) that would probably be used if you've never done any of these problems before and a
-		clever way to not have
-		to check every combination of numbers possible and reduce the complexity to O(n).
+		With that being said, this is probably one of the more likable questions in my opinion. It's a good example of a question where there's a very obvious
+		brute force answer in a poor time complexity (that would probably be used if you've never done any of these problems before) and a
+		clever way to use space to get a better time complexity. (namely, not having
+		to check every combination of numbers possible)
 	</p>
 	<br>
-
+	<p style='font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;'>
+		The solution on Leetcode doesn't give a visualization of what they're doing, so I went ahead and made a graphic that details the general idea of what
+		their solution is. I don't think I'm going to go into nitty-gritty code solutions, but rather a general idea of how to understand solution articles and 
+		other users' solution submissions. This article is probably best utilized if you have some background programming experience.
+	</p>
+	<br>
+	<br>
 	<section id='scroll'>
 		<!--  step/text container  -->
 		<div class='scroll__text'>
 			<div class='step' data-step='1' style='height: 240px;'>
-				<p>The jist of this problem is basically given some target number, find the pair of numbers that sum up to our
+				<p>The jist of this problem is basically given some target number and an unsorted array of numbers, find the pair of numbers that sum up to our
 					target. 
 				</p>
 				<p>
 					For the sake of brevity, I'm not going to consider the sorted case and the 2-pointers method: I'll save that
-					for when I make a post on 3-Sum. If that made no sense to you, don't worry about it for now.
+					for when I make a post on 3-Sum. If that made no sense, don't worry about it for now.
 				</p>
 			</div>
-			<div class='step' data-step='2'>
+			<div class='step' data-step='2'  style = 'height: 350px;'>
 				<p>
 					Let's consider the array <b>[4,3,5,12,7,1,9]</b>.
 				</p>
@@ -109,12 +115,12 @@
 			</div>
 			<div class='step' data-step='4' >
 				<p> 
-					Let's start with our first element 4 and ask ourselves what implications would there be is 4 was a solution. 
-					If 4 was part of the solution, then it would mean that there must exist 15 somewhere
+					Let's start with our first element '4' and ask ourselves what implications would there be is 4 was a solution. 
+					If 4 was part of the solution pair, then it would mean that there must exist 15 somewhere
 					else in the array, since 15 + 4 = 19. That is to say, 15 and 4 are <b>complements</b> of one another.
 					<br>
 					<br>
-					In our example, 12 and 7 is the winning combination and are thus complements of one another other.
+					In our example array, <b>12</b> and <b>7</b> is the pair that sums to <b>19</b> and are thus complements of one another.
 				</p>
 			</div>
 			<div class = 'step' data-step = '5' style = 'height: 300px;'>
@@ -123,7 +129,7 @@
 					<br>
 					<br>
 					Instead of checking every combination, it's enough to check if the array contains an element and its complement. That is, everytime we iterate through
-					the array and consider some element, we only need to check if the complement also exists instead of checking if a pair sums to a target.
+					the array and consider some element, we only need to check if the complement also exists.
 					<br>
 					<br>
 				</p>
@@ -149,21 +155,23 @@
 			</div>
 			<div class='step' data-step='8'>
 				<p>Start with our first element 4 -- 4's complement (15) is not in our hashtable (so for now we assume it doesn't exist), so we don't have our solution. 
-					We have now seen the #4 and need to record that, so we insert it into our hash table</p>
+					We have now seen the #4 and need to record that, so we insert it into our hash table.</p>
 			</div>
 			<div class='step' data-step='9'>
-				<p>Now we go to 3 -- again, 3's complement (16) is not in our hashtable. we have now seen 3 and record that, so we insert it into our hash table</p>
+				<p>Now we go to 3 -- again, 3's complement (16) is not in our hashtable. we have now seen 3 and record that, so we insert it into our hash table.</p>
 			</div>
 			<div class='step' data-step='10'>
-				<p>Now we go to 5 -- it's complement is 14 and isn't in the hashtable. We record it.</p>
+				<p>Now we go to 5 -- it's complement is 14 and isn't in the hashtable. We record 5 and keep going.</p>
 			</div>
 			<div class='step' data-step='11'>
-				<p>We go to 12 -- 12's complement is 7 and 7 isn't in our hashtable. we don't have a solution yet, so we record it in our hashtable and keep going</p>
+				<p>We go to 12 -- 12's complement is 7 and 7 isn't in our hashtable. Remember, even though we personally know 7 is in our array,
+					the computer hasn't seen it yet (so to the computer, it doesn't exist yet). We don't have a solution yet, 
+					so we record it in our hashtable and keep going.</p>
 			</div>
-			<div class='step' data-step='12'>
-				<p>We go to 7. 7's complement is 12, and we have seen 12 before (it's in our hashtable). 
-					Because of this, we now have our solution without having to check every combination. 
-					We now know the solution are the indicies of 7 and 12.
+			<div class='step' data-step='12' style = 'height: 380px;'>
+				<p>We go to 7. 7's complement is 12, and we (and the computer) have seen 12 before (it's in our hashtable). 
+					Because of this, we now have our solution and we didn't have to check every combination. 
+					We now know the solution are the array indicies of 7 and 12.
 				</p>
 			</div>
 		</div>
@@ -180,10 +188,15 @@
 	</section>
 	<br>
 	<br>
+	<p style = 'font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;'>
+		So hopefully this makes it easier to understand what the Leetcode solution was talking about. This hashtable uses O(n) space since it contains a max of n elements.
+		We also have to only iterate through our array once, so our runtime is now O(n). (which is much better than O(n^2)).
+	</p>
 	<br>
 	<br>
-	<br>
-	<br>
+	<div style = 'float:right';>
+		<a>prev</a> &nbsp; <a>next</a>
+	</div>
 	<br>
 	<br>
 	<br>

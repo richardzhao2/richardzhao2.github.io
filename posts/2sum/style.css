@@ -17,6 +17,17 @@ body {
   color: #2a2a2a;
 }
 
+a{
+  color: #333;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+
 .header a{
   color: #333;
 }
