@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<title>Richard Zhao</title>
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:700,300' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+
+<body style="background-color:#f5f5f5">
+	<div id="top" class='header'>
+		<div class='header-left'>
+			<a href='../../index.html'>Richard Zhao</a>
+		</div>
+		<div class='header-right'>
+			<a href='../../index.html#devblogref'>devblog</a>
+			<a href='http://github.com/richardzhao2'>
+				<img src='../../images/github.svg'></img>
+			</a>
+			<a href='mailto:rzhao2@andrew.cmu.edu'>
+				<img src='../../images/mail.svg'></img>
+			</a>
+			<a href='https://www.linkedin.com/in/rzhao2/'>
+				<img src='../../images/rss.svg'></img>
+			</a>
+		</div>
+	</div>
+
+	<br>
+	<br>
+	<br>
+	<h1>Remove nth Node From End of List</h1>
+	<h4>Given a linked list, remove the n-th node from the end of list and return its head.
+	</h4>
+	<h5>Example:
+		Given linked list: 1->2->3->4->5, and n = 2.
+		<br>
+		After removing the second node from the end, the linked list becomes 1->2->3->5.</h5>
+	<br>
+	<p style='font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;'>
+		I haven't seen much experience with this question (I've never received this question in a hackerrank or interview and haven't seen it
+		on any company's glassdoor questions), but I think this is a decent question to get more comfortable with working with linked lists 
+		and linked list traversal. Also, one of the methods for the optimal solution is a pretty common technique to use when it comes to questions
+		involving traversal and cycle detection. Personally, this is one of my weakest topics and I hate getting these questions for interviews.
+	</p>
+	<br>
+	<p style='font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;'>
+		The solution on Leetcode is pretty good in my opinion, but it may be beneficial to see a step by step visualization of their hare and 
+		tortoise solution. 
+	</p>
+	<br>
+	<br>
+	<section id='scroll'>
+		<!--  step/text container  -->
+		<div class='scroll__text'>
+			<div class='step' data-step='1' style='height: 400px;'>
+				<p>The problem statement is pretty self explanatory. Given some linked list, get rid of the nth node from the back and return the 
+					resulting list. There's 2 main ways that I see to do this; both are in O(n) time.
+				</p>
+				<p>
+					The first way involves going through the list twice: once to calculate the length, and another to actually remove the node. The 
+					second way involves keeping track of 2 positions in our linked list. 
+				</p>
+			</div>
+			<div class='step' data-step='2'  style = 'height: 250px;'>
+				<p>
+					Let's consider our linked list: <br>
+					4 -> 3 -> 2 -> 5 -> 6 -> 8. <br>
+					We want to remove the 2nd node from the back. 
+				</p>
+				<p>
+					Our solution should return the linked list 4 -> 3 -> 2 -> 5 -> 8.
+				</p>
+			</div>
+			<div class='step' data-step='3' style = 'height: 430px;'>
+				<p>As mentioned, the simple solution is go through the linked list twice. 
+				</p>
+			</div>
+			<div class='step' data-step='4' >
+				<p> 
+					Let's start with our first element '4' and ask ourselves what implications would there be is 4 was a solution. 
+					If 4 was part of the solution pair, then it would mean that there must exist 15 somewhere
+					else in the array, since 15 + 4 = 19. That is to say, 15 and 4 are <b>complements</b> of one another.
+					<br>
+					<br>
+					In our example array, <b>12</b> and <b>7</b> is the pair that sums to <b>19</b> and are thus complements of one another.
+				</p>
+			</div>
+			<div class = 'step' data-step = '5' style = 'height: 300px;'>
+				<p>
+					<b>We can use the idea of checking only for complements to speed up our solution.</b>
+					<br>
+					<br>
+					Instead of checking every combination, it's enough to check if the array contains an element and its complement. That is, everytime we iterate through
+					the array and consider some element, we only need to check if the complement also exists.
+					<br>
+					<br>
+				</p>
+			</div>
+			<div class = 'step' data-step = '6' style = 'height: 380px;'>
+				<p>
+					Going back to our example, when we consider the element '3', we only have to see if its complement (16) exists in the array. It doesn't,
+					so it obviously can't be part of the solution. However, once we reach the element '7,' we check to see if its complement (12) exists. It does,
+					so 12 and 7 must be our solution. 
+					<br>
+					<br>
+					<b>We can reduce the time of checking for a complement to O(1) with a hashtable. </b> (lookup for a hashtable is treated as O(1)). 
+					<br>
+					<br>
+					This is how we can reduce our solution to O(n).
+				</p>
+			</div>
+
+			<div class='step' data-step='7'>
+				<p>We introduce a hash table to keep track of what elements we have seen (and thus know to exist). Since at the start we haven't seen any numbers,
+					the hash table is blank, and we assume nothing about the existence of a element's complement.
+				</p>
+			</div>
+			<div class='step' data-step='8'>
+				<p>Start with our first element 4 -- 4's complement (15) is not in our hashtable (so for now we assume it doesn't exist), so we don't have our solution. 
+					We have now seen the #4 and need to record that, so we insert it into our hash table.</p>
+			</div>
+			<div class='step' data-step='9'>
+				<p>Now we go to 3 -- again, 3's complement (16) is not in our hashtable. we have now seen 3 and record that, so we insert it into our hash table.</p>
+			</div>
+			<div class='step' data-step='10'>
+				<p>Now we go to 5 -- it's complement is 14 and isn't in the hashtable. We record 5 and keep going.</p>
+			</div>
+			<div class='step' data-step='11'>
+				<p>We go to 12 -- 12's complement is 7 and 7 isn't in our hashtable. Remember, even though we personally know 7 is in our array,
+					the computer hasn't seen it yet (so to the computer, it doesn't exist yet). We don't have a solution yet, 
+					so we record it in our hashtable and keep going.</p>
+			</div>
+			<div class='step' data-step='12' style = 'height: 380px;'>
+				<p>We go to 7. 7's complement is 12, and we (and the computer) have seen 12 before (it's in our hashtable). 
+					Because of this, we now have our solution and we didn't have to check every combination. 
+					We now know the solution are the array indicies of 7 and 12.
+				</p>
+			</div>
+		</div>
+
+		<!--  graphic container  -->
+		<div class='scroll__graphic'>
+			<!--  actual graphic/chart   -->
+
+			<div class='chart'>
+			</div>
+		</div>
+
+
+	</section>
+	<br>
+	<br>
+	<p style = 'font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;'>
+		So hopefully this makes it easier to understand what the Leetcode solution was talking about. This hashtable uses O(n) space since it contains a max of n elements.
+		We also have to only iterate through our array once, so our runtime is now O(n). (which is much better than O(n^2)).
+	</p>
+	<br>
+	<br>
+	<div style = 'float:right';>
+		<a>prev</a> &nbsp; <a>next</a>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+</body>
+
+
+</html>
+
+<script src='d3.v4.min.js'></script>
+<script src='https://unpkg.com/intersection-observer@0.5.0/intersection-observer.js'></script>
+<script src='scrollama.min.js'></script>
+<script src="script.js"></script>
