@@ -17,7 +17,7 @@ button.addEventListener("click",function(){
   }
   else{
     cool.style.display = "block";
-    button.innerHTML = "back";
+    button.innerHTML = "list";
     boring.style.display = "none";
   }
 },false);
