@@ -52,15 +52,6 @@
       <h1>stuff i've made</h1>
     </div>
     <div id='gallery'></div>
-
-    <h1 style="margin-bottom: 0.7em;">posts</h1>
-    <u>
-      <a href='posts/2sum/2sum.html'>Two-Sum</a>
-    </u>
-    <br>
-    <u>
-      <a href="python/pythonHome.html">Python Tutorial (in progress)</a>
-    </u>
   </div>
 
   <!---------->
@@ -74,7 +65,7 @@
       <div class="year">2019</div>
       <div class="date">-02</div>
       <div class="blank">&nbsp &nbsp &nbsp</div>
-      <a href="https://github.com/traviho/d-scribe" style="text-decoration: none;">d-scribe</a>
+      <a href="https://github.com/richardzhao2/dscribe" style="text-decoration: none;">d-scribe</a>
     </div>
     <div class="row">
       <div class="date">2019-01</div>
@@ -188,12 +179,12 @@
 <script>
   var projects = [
     { img: 'engee', date: '02/2018', url: 'https://github.com/richardzhao2/engee' },
-    { img: 'track-and-field', date: '08/2018', url: 'https://github.com/richardzhao2/engee' },
+    { img: 'track-and-field', date: '08/2018', url: 'posts/trackandfieldbot/trackbot.html' },
     { img: 'schedulize', date: '12/2017', url: 'https://github.com/richardzhao2/Schedulize' },
     { img: 'epm-dashboard', date: '10/2017', url: 'https://github.com/richardzhao2/EPM-Dashboard' },
     { img: 'blood-money', date: '05/2017', url: 'https://github.com/richardzhao2/Blood-Money' },
     { img: 'pittlets', date: '01/2019', url: 'https://github.com/richardzhao2/pittlets' },
-    { img: 'd-scribe', date: '02/2019', url: 'https://github.com/traviho/dscribe' }
+    { img: 'd-scribe', date: '02/2019', url: 'https://github.com/richardzhao2/dscribe' }
   ];
 
   projects = _.sortBy(projects, ƒ('date', d3.time.format('%m/%Y').parse)).reverse()
