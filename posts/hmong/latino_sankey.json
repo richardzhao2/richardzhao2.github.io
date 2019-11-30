@@ -1,0 +1,40 @@
+{
+  "nodes": [
+    {
+      "name": "All Hispanic/Latinos",
+      "id": 0
+    },
+    {
+      "name": "Graduate High School",
+      "id": 1
+    },
+    {
+      "name": "Go to College (undergrad)",
+      "id": 2
+    },
+    {
+      "name": "Graduate College (undergrad)",
+      "id": 3
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 1,
+      "value": 0.78,
+      "label": 0.78
+    },  
+    {
+      "source": 1,
+      "target": 2,
+      "value": 0.36,
+      "label": 0.46
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "value": 0.4,
+      "label": 0.22
+    }
+  ]
+}

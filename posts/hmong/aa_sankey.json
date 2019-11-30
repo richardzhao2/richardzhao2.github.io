@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "name": "All African Americans",
+      "id": 0
+    },
+    {
+      "name": "Graduate High School",
+      "id": 1
+    },
+    {
+      "name": "Go to College",
+      "id": 2
+    },
+    {
+      "name": "Graduate College",
+      "id": 3
+    },    
+    {
+      "name": "Some High School",
+      "id": 4
+    },
+    {
+      "name": "Some College",
+      "id": 5
+    },
+    {
+      "name": "College Degree",
+      "id": 6
+    },
+    {
+      "name": "High School Degree",
+      "id": 7
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 1,
+      "value": 0.78,
+      "label": 0.78
+    },  
+    {
+      "source": 1,
+      "target": 2,
+      "value": 0.2808,
+      "label": 0.36
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "value": 0.4992,
+      "label": 0.64
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "value": 0.11,
+      "label": 0.4
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "value": 0.22,
+      "label": 0.22
+    },      
+    {
+      "source": 2,
+      "target": 5,
+      "value": 0.168,
+      "label": 0.6
+    }, 
+    {
+      "source": 3,
+      "target": 6,
+      "value": 0.21,
+      "label": 1
+    }
+  ]
+}

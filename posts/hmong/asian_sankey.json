@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "name": "All Asians",
+      "id": 0
+    },
+    {
+      "name": "Graduate High School",
+      "id": 1
+    },
+    {
+      "name": "Go to College",
+      "id": 2
+    },
+    {
+      "name": "Graduate College",
+      "id": 3
+    },    
+    {
+      "name": "Some High School",
+      "id": 4
+    },
+    {
+      "name": "Some College",
+      "id": 5
+    },
+    {
+      "name": "College Degree",
+      "id": 6
+    },
+    {
+      "name": "High School Degree",
+      "id": 7
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 1,
+      "value": 0.91,
+      "label": 0.91
+    },  
+    {
+      "source": 1,
+      "target": 2,
+      "value": 0.64,
+      "label": 0.46
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "value": 0.09,
+      "label": 0.36
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "value": 0.54,
+      "label": 0.22
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "value": 0.09,
+      "label": 0.09
+    },      
+    {
+      "source": 2,
+      "target": 5,
+      "value": 0.26,
+      "label": 0.26
+    }, 
+    {
+      "source": 3,
+      "target": 6,
+      "value": 0.54,
+      "label": 1
+    }
+  ]
+}

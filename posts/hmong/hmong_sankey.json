@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "name": "All Hmong",
+      "id": 0
+    },
+    {
+      "name": "Graduate High School",
+      "id": 1
+    },
+    {
+      "name": "Go to College",
+      "id": 2
+    },
+    {
+      "name": "Graduate College",
+      "id": 3
+    },    
+    {
+      "name": "Some High School",
+      "id": 4
+    },
+    {
+      "name": "Some College",
+      "id": 5
+    },
+    {
+      "name": "College Degree",
+      "id": 6
+    },
+    {
+      "name": "High School Degree",
+      "id": 7
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 1,
+      "value": 0.81,
+      "label": 0.81
+    },  
+    {
+      "source": 1,
+      "target": 2,
+      "value": 0.7,
+      "label": 0.7
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "value": 0.11,
+      "label": 0.3
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "value": 0.18,
+      "label": 0.10
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "value": 0.19,
+      "label": 0.19
+    },      
+    {
+      "source": 2,
+      "target": 5,
+      "value": 0.52,
+      "label": 0.90
+    }, 
+    {
+      "source": 3,
+      "target": 6,
+      "value": 0.18,
+      "label": 1
+    }
+  ]
+}
