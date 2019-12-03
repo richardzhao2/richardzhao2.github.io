@@ -385,10 +385,10 @@ function handleStepEnter(response) {
                 .delay(function (d, i) { console.log(i); return (i * 100) })
 
         });
-        scroller_svg.append("circle").attr("cx", 20).attr("cy", chart_height / 2.0 + radius).attr("r", 6).style("fill", "#e41a1c")
-        scroller_svg.append("circle").attr("cx", 20).attr("cy", chart_height / 2.0 + radius + 30).attr("r", 6).style("fill", '#377eb8')
-        scroller_svg.append("text").attr("x", 40).attr("y", chart_height / 2.0 + radius).text("Hmong-American").style("font-size", "15px").attr("alignment-baseline", "middle")
-        scroller_svg.append("text").attr("x", 40).attr("y", chart_height / 2.0 + radius + 30).text("Asian-American").style("font-size", "15px").attr("alignment-baseline", "middle")
+        scroller_svg.append("circle").attr("cx", 20).attr("cy", chart_height / 2.0 + radius + 25).attr("r", 6).style("fill", "#e41a1c")
+        scroller_svg.append("circle").attr("cx", 20).attr("cy", chart_height / 2.0 + radius + 45).attr("r", 6).style("fill", '#377eb8')
+        scroller_svg.append("text").attr("x", 40).attr("y", chart_height / 2.0 + radius + 25).text("Hmong-American").style("font-size", "15px").attr("alignment-baseline", "middle")
+        scroller_svg.append("text").attr("x", 40).attr("y", chart_height / 2.0 + radius + 45).text("Asian-American").style("font-size", "15px").attr("alignment-baseline", "middle")
     }
     else if (response.index == 16) {
 
