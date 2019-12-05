@@ -51,9 +51,9 @@ chart_height = parseFloat(window.innerHeight / 2);
 
 function gridData() {
     var data = new Array();
-    var xpos = 1 + chart_width / 12; //starting xpos and ypos at 1 so the stroke will show when we make the grid below
+    var xpos = 1 + chart_width / 13; //starting xpos and ypos at 1 so the stroke will show when we make the grid below
     var ypos = 1 + 50;
-    var width = chart_width / 12;
+    var width = chart_width / 13;
     var height = width;
 
     // iterate for rows 
@@ -143,7 +143,7 @@ function handleStepEnter(response) {
                 .style("opacity", 0)
                 .text("1 box = 1% of population")
                 .attr("x", (chart_width / 12))
-                .attr("y", (chart_width + chart_width / 13))
+                .attr("y", (chart_width / 12))
                 .transition()
                 .style("opacity", 1)
             population_tip = true;
@@ -181,7 +181,7 @@ function handleStepEnter(response) {
             index = i; // temporary testing to see alternative ways of visualization
             d3.select(squareElements[index])
                 .transition()
-                .delay(function (d) { return (20 * i + 1) + 1000 })
+                .delay(function (d) { return (20 * i + 1) + 1100 })
                 .duration(1000)
                 .style('fill', 'steelblue')
         }
@@ -201,7 +201,7 @@ function handleStepEnter(response) {
             index = i; // temporary testing to see alternative ways of visualization
             d3.select(squareElements[index])
                 .transition()
-                .delay(function (d) { return (20 * i + 1) + 1050 })
+                .delay(function (d) { return (20 * i + 1) + 1100 })
                 .duration(1000)
                 .style('fill', 'yellow')
         }
@@ -235,7 +235,7 @@ function handleStepEnter(response) {
             index = i; // temporary testing to see alternative ways of visualization
             d3.select(squareElements[index])
                 .transition()
-                .delay(function (d) { return (20 * i + 1) + 1200 })
+                .delay(function (d) { return (20 * i + 1) + 1300 })
                 .duration(1000)
                 .style('fill', 'steelblue')
         }
@@ -332,16 +332,16 @@ function handleStepEnter(response) {
                 .range([0, chart_width])
                 .padding([0.4])
             scroller_svg.append("g")
-                .attr("transform", "translate(0," + (height + 50) + ")")
+                .attr("transform", "translate(0," + (chart_height - 50) + ")")
                 .call(d3.axisBottom(x).tickSize(0))
 
             // Add Y axis
             var y = d3.scaleLinear()
                 .domain([0, 80])
-                .range([height, 0]);
+                .range([chart_height, 0]);
             scroller_svg.append("g")
                 .call(d3.axisLeft(y))
-                .attr("transform", function (d) { return "translate(25,50)"; });
+                .attr("transform", function (d) { return "translate(25,-50)"; });
 
             // Another scale for subgroup position
             var xSubgroup = d3.scaleBand()
@@ -355,7 +355,7 @@ function handleStepEnter(response) {
                 .range(['#377eb8', '#e41a1c'])
             scroller_svg.append("text")
                 .attr("x", (chart_width / 2))
-                .attr("y", (80))
+                .attr("y", (10))
                 .attr("text-anchor", "middle")
                 .style("font-size", "14px")
                 .style("text-decoration", "underline")
@@ -372,23 +372,23 @@ function handleStepEnter(response) {
                 .data(function (d) { return subgroups.map(function (key) { return { key: key, value: d[key] }; }); })
                 .enter().append("rect")
                 .attr("x", function (d) { return xSubgroup(d.key); })
-                .attr("y", function (d) { return y(d.value) + 50; })
+                .attr("y", function (d) { return y(d.value) - 50; })
                 .attr("width", xSubgroup.bandwidth())
-                .attr("height", function (d) { return height - y(0); }) // always equal to 0
+                .attr("height", function (d) { return chart_height - y(0); }) // always equal to 0
                 .attr("fill", function (d) { return color(d.key); });
 
             scroller_svg.selectAll("rect")
                 .transition()
                 .duration(800)
-                .attr("y", function (d) { return y(d.value) + 50; })
-                .attr("height", function (d) { return height - y(d.value); })
+                .attr("y", function (d) { return y(d.value) - 50; })
+                .attr("height", function (d) { return chart_height - y(d.value); })
                 .delay(function (d, i) { console.log(i); return (i * 100) })
 
         });
-        scroller_svg.append("circle").attr("cx", 20).attr("cy", chart_height / 2.0 + radius + 25).attr("r", 6).style("fill", "#e41a1c")
-        scroller_svg.append("circle").attr("cx", 20).attr("cy", chart_height / 2.0 + radius + 45).attr("r", 6).style("fill", '#377eb8')
-        scroller_svg.append("text").attr("x", 40).attr("y", chart_height / 2.0 + radius + 25).text("Hmong-American").style("font-size", "15px").attr("alignment-baseline", "middle")
-        scroller_svg.append("text").attr("x", 40).attr("y", chart_height / 2.0 + radius + 45).text("Asian-American").style("font-size", "15px").attr("alignment-baseline", "middle")
+        scroller_svg.append("circle").attr("cx", 20).attr("cy", chart_height / 2.0 + radius + 17).attr("r", 6).style("fill", "#e41a1c")
+        scroller_svg.append("circle").attr("cx", 20).attr("cy", chart_height / 2.0 + radius + 37).attr("r", 6).style("fill", '#377eb8')
+        scroller_svg.append("text").attr("x", 40).attr("y", chart_height / 2.0 + radius + 17).text("Hmong-American").style("font-size", "13px").attr("alignment-baseline", "middle")
+        scroller_svg.append("text").attr("x", 40).attr("y", chart_height / 2.0 + radius + 37).text("Asian-American").style("font-size", "13px").attr("alignment-baseline", "middle")
     }
     else if (response.index == 16) {
 
