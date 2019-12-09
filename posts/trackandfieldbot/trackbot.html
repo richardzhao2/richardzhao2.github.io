@@ -8,7 +8,6 @@
 
   <title>Richard Zhao</title>
 
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:700,300' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <link rel="stylesheet" href="../../style.css">
@@ -27,46 +26,69 @@
       </a>
       <a href='mailto:rzhao2@andrew.cmu.edu'>
         <img src='../../images/mail.svg'></img>
-      </a>     
+      </a>
     </div>
   </div>
 
 
-  
+
   <!---------->
   <div id="archive">
-  	<br>
-  	<br>
-  	<div class="boringtitle">Messenger Track and Field Bot</div>
-  	<br>
-  	<div class="content">
-  		<p>About 2 years ago, pretty much all of my messenger chats were spammed with people playing games. And everyone took these games seriously; Endless Lake was serious business and I made it a point to keep #1 in all of my chats. I didn't know how to program at the time, so I played everything by hand. Path of Exile's recent bot-ban wave led me to investigate more into their capabilities, and I was shocked to discover their complexities and the extent to which these bots can play the game. At the same time, one of my friends revived an old game in which I thought I had secured my spot as #1. I didn't particularly feel like manually grinding and relearning any (admittedly bad) Facebook games, so I thought to myself:</p>
+    <br>
+    <br>
+    <div class="boringtitle">Messenger Track and Field Bot</div>
+    <br>
+    <div class="content">
+      <p>About 2 years ago, pretty much all of my messenger chats were spammed with people playing games. And everyone
+        of my friends
+        took these games seriously; Endless Lake was serious business and I made it a point to fight for #1 in all of my
+        chats. I was still premed at the time and didn't really code, so I played everything by hand. Path of Exile's
+        recent bot-ban
+        wave led me to investigate more into their capabilities, and I was shocked to discover how many of them were
+        actually technically simple and not
+        that complex in nature, yet were able to accomplish much playing the actual game. At the same time, one of my
+        friends revived an old game in
+        which I thought I had secured my spot as #1. I didn't feel like actually playing, so I wanted to use the nuclear
+        option -- using a bot, which is honestly just cheating but I didn't care.
 
-      <p style="font-weight: bold;">Why not have a bot play the game for me?</p>
+        <p> One of my friends from college already made a bot for the Facebook game "Everwing," so I took a look at his
+          source code. I wanted to start small and work with games that were static and had very
+          consistent gameplay and build up from there to more dynamic games, and honestly Track and Field 100m is about
+          as simple as it gets. </p>
 
-      <p> One of my friends from college already made a bot for the Facebook game "Everwing," so I took a look at his source code and began studying. I wanted to start small and work with games that were static and had very consistent gameplay and build up from there to more dynamic games. <p>
+        <p> I thought Track and Field 100m was a perfect way to ease my way into building bots. I'm technically inept so
+          I don't like working
+          with low level code, nor am I interested in reading bytecode ever again or whatever technique Runescape bot
+          makers use to
+          directly get the game state, so I decided to use "computer vision". (if you can consider it that) I used
+          pyautogui to
+          mimic keyboard and
+          mouse events and Pillow for taking screenshots. I originally also used pyautogui for image processing, but
+          I
+          found that it's locate function was too slow so I ended up switching to OpenCV and used template matching
+          instead.</p>
 
-      <p> Track and Field 100m is about as simple as it gets. </p>
+        <img src="example.png" alt="gamepicture" style="width:100%;height:75%;">
 
-      <p> I thought Track and Field 100m was a perfect way to ease my way into building bots. I don't like working with low level code, nor am I interested in reading bytecode ever again (I've had ENOUGH of that for a lifetime) so I decided to go with a bot that used computer vision. I used pyautogui to mimic keyboard and mouse events and Pillow for taking screenshots. I originally also used pyautogui for image processing, but I found that it's locate function was too slow so I ended up switching to OpenCV and used template matching instead.</p>
+        <p> The game is pretty simple-- either hit z and x or drag your mouse between the two buttons to run.
+          Hitting
+          z and x would probably be simpler (it'd be like 2 lines of code) but I wanted to practice using mouse
+          events
+          and image recognition for more complex tasks in the future.</p>
 
-      <img src="example.png" alt="gamepicture" style="width:100%;height:75%;">
+        <p> The code was ridiculously simple; start dragging between the two buttons after seeing the "go" label. To
+          make location faster, I reduced the search boundary.</p>
 
-      <p> The game is pretty simple-- either hit z and x or drag your mouse between the two buttons to run. Hitting z and x would probably be simpler (it'd be like 2 lines of code) but I wanted to practice using mouse events and image recognition for more complex tasks in the future.</p>
+        <p>The fastest speed I've gotten was 7.8 seconds. I would also like to add that I promptly put every chat in the dumpster with this time.</p>
 
-      <p> The code was simple; start dragging between the two buttons after the "go" label. However, the function to locate a subimage is pretty slow, which leads to delays in the bot actually running. For now, I'll live with the current speed but I'm going to try having the bot respond to an audio cue to start or reducing the search region even further to speed up searches. </p>
-
-      <p>The current fastest speed I've gotten was 7.8 seconds.</p>
-
-      <p> Source code available <a href = https://github.com/richardzhao2/track-and-field-bot>here</a></p> 
-
-      <img src="record.png" alt="record" style="width:100%;height:75%;">
+        <p> Source code available <a href=https://github.com/richardzhao2/track-and-field-bot>here</a>. </p> <img
+            src="record.png" alt="record" style="width:100%;height:75%;">
 
 
-  	</div>
+    </div>
 
-  <script type ="../text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
-  <script type ="../text/javascript" src="../../js/boxes.js"></script>
+    <script type="../text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+    <script type="../text/javascript" src="../../js/boxes.js"></script>
 </body>
 
 
