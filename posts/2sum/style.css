@@ -109,7 +109,6 @@ a {
     -moz-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    border: 1px solid #000;
     width: 100%;
   }
 
